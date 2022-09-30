@@ -45,6 +45,15 @@ function getResponse() {
         if (userText.includes("Damn")) {
             userText = userText.slice(0, userText.indexOf("Damn")) + "****" + userText.slice(userText.indexOf("Damn") + 4);
         }
+        else if (userText.includes("Darn")) {
+            userText = userText.slice(0, userText.indexOf("Darn")) + "****" + userText.slice(userText.indexOf("Darn") + 4);
+        }
+        else if (userText.includes("Bad")) {
+            userText = userText.slice(0, userText.indexOf("Bad")) + "***" + userText.slice(userText.indexOf("Bad") + 3);
+        }
+        else if (userText.includes("Worse")) {
+            userText = userText.slice(0, userText.indexOf("Worse")) + "*****" + userText.slice(userText.indexOf("Worse") + 5);
+        }
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
