@@ -14,7 +14,6 @@
     text-align: left;
     outline: none;
     font-size: 18px;
-    border-radius: 10px 10px 0px 0px;
     border: 3px solid rgb(240, 32, 32);
     border-bottom: none;
 }
@@ -33,7 +32,6 @@
     overflow: auto;
     scrollbar-width: none;
     height: max-content;
-    transition: max-height 0.2s ease-out;
 }
 
 .outer-container {
@@ -64,7 +62,6 @@
     width: 100%;
     align-items: center;
     background-color: rgb(235, 235, 235);
-    border-radius: 10px 10px 0px 0px;
     padding: 10px 0px 10px 10px;
 }
 
@@ -92,7 +89,6 @@
     border: none;
     box-sizing: border-box;
     width: 100%;
-    border-radius: 10px;
     padding: 10px;
     font-size: 16px;
     color: #000;
@@ -114,8 +110,6 @@
     display: inline-block;
     background: #f80000;
     padding: 10px;
-    border-radius: 8px;
-    border-bottom-right-radius: 2px;
     max-width: 80%;
     margin-right: 10px;
     animation: floatup .5s forwards
@@ -134,7 +128,6 @@
     display: inline-block;
     background: #e0e0e0;
     padding: 10px;
-    border-radius: 8px;
     border-bottom-left-radius: 2px;
     max-width: 80%;
     margin-left: 10px;
@@ -155,6 +148,6 @@
         width: 100%;
         border: 0px;
         border-top: 3px solid white;
-        border-radius: 0px;
+        /* border-radius: 0px; */
     }
 }
