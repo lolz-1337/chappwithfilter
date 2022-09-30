@@ -1,6 +1,5 @@
-// Collapsible
-var coll = document.getElementsByClassName("collapsible");
 
+var coll = document.getElementsByClassName("collapsible");
 for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -16,7 +15,6 @@ for (let i = 0; i < coll.length; i++) {
     });
 }
 
-// Gets the first message
 function firstBotMessage() {
     let firstMessage = "Hi from sender!"
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
@@ -25,16 +23,6 @@ function firstBotMessage() {
 
 firstBotMessage();
 
-// Retrieves the response
-function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
-    $("#chatbox").append(botHtml);
-
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
-
-//Gets the text text from the input box and processes it
 function getResponse() {
     let userText = $("#textInput").val();
 
@@ -54,6 +42,12 @@ function getResponse() {
         else if (userText.includes("Worse")) {
             userText = userText.slice(0, userText.indexOf("Worse")) + "*****" + userText.slice(userText.indexOf("Worse") + 5);
         }
+        else if (userText.includes("Worst")) {
+            userText = userText.slice(0, userText.indexOf("Worst")) + "*****" + userText.slice(userText.indexOf("Worst") + 5);
+        }
+        else if (userText.includes("Shit")) {
+            userText = userText.slice(0, userText.indexOf("Shit")) + "****" + userText.slice(userText.indexOf("Shit") + 4);
+        }
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
@@ -67,25 +61,17 @@ function getResponse() {
     }, 1000)
 }
 
-// Handles sending text via button clicks
 function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    //Uncomment this if you want the bot to respond to this buttonSendText event
-    // setTimeout(() => {
-    //     getHardResponse(sampleText);
-    // }, 1000)
 }
 
 function sendButton() {
     getResponse();
 }
-
-// Press enter to send a message
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
