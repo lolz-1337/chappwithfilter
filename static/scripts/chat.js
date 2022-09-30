@@ -1,4 +1,3 @@
-``
 var coll = document.getElementsByClassName("collapsible");
 for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function () {
@@ -47,6 +46,24 @@ function getResponse() {
         }
         else if (userText.includes("Shit")) {
             userText = userText.slice(0, userText.indexOf("Shit")) + "****" + userText.slice(userText.indexOf("Shit") + 4);
+        }
+        else if (userText.includes("damn")) {
+            userText = userText.slice(0, userText.indexOf("damn")) + "****" + userText.slice(userText.indexOf("damn") + 4);
+        }
+        else if (userText.includes("darn")) {
+            userText = userText.slice(0, userText.indexOf("darn")) + "****" + userText.slice(userText.indexOf("darn") + 4);
+        }
+        else if (userText.includes("bad")) {
+            userText = userText.slice(0, userText.indexOf("bad"))+ "***" + userText.slice(userText.indexOf("bad") + 3);
+        }
+        else if (userText.includes("worse")) {
+            userText = userText.slice(0, userText.indexOf("worse")) + "*****" + userText.slice(userText.indexOf("worse") + 5);
+        }
+        else if (userText.includes("worst")) {
+            userText = userText.slice(0, userText.indexOf("worst")) + "*****" + userText.slice(userText.indexOf("worst") + 5);
+        }
+        else if (userText.includes("shit")) {
+            userText = userText.slice(0, userText.indexOf("shit")) + "****" + userText.slice(userText.indexOf("shit") + 4);
         }
     }
 
