@@ -30,12 +30,16 @@ function getResponse() {
     }
     else {
         if (userText.match(/[Dd][Aa][MmRr][Nn]/)) {
-            index = userText.match(/[Dd][Aa][MmRr][Nn]/).index;
-            userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+            while (userText.match(/[Dd][Aa][MmRr][Nn]/)) {
+                index = userText.match(/[Dd][Aa][MmRr][Nn]/).index;
+                userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+            }
         }
-        else if (userText.match(/[Ss][Hh][Ii][Tt]/)) {
-            index = userText.match(/[Ss][Hh][Ii][Tt]/).index;
-            userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+        if (userText.match(/[Ss][Hh][Ii][Tt]/)) {
+            while (userText.match(/[Ss][Hh][Ii][Tt]/)) {
+                index = userText.match(/[Ss][Hh][Ii][Tt]/).index;
+                userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+            }
         }
     }
 
