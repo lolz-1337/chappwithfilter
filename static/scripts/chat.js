@@ -29,41 +29,13 @@ function getResponse() {
         userText = "Enter some text!";
     }
     else {
-        if (userText.includes("Damn")) {
-            userText = userText.slice(0, userText.indexOf("Damn")) + "****" + userText.slice(userText.indexOf("Damn") + 4);
+        if (userText.match(/[Dd][Aa][MmRr][Nn]/)) {
+            index = userText.match(/[Dd][Aa][MmRr][Nn]/).index;
+            userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
         }
-        else if (userText.includes("Darn")) {
-            userText = userText.slice(0, userText.indexOf("Darn")) + "****" + userText.slice(userText.indexOf("Darn") + 4);
-        }
-        else if (userText.includes("Bad")) {
-            userText = userText.slice(0, userText.indexOf("Bad")) + "***" + userText.slice(userText.indexOf("Bad") + 3);
-        }
-        else if (userText.includes("Worse")) {
-            userText = userText.slice(0, userText.indexOf("Worse")) + "*****" + userText.slice(userText.indexOf("Worse") + 5);
-        }
-        else if (userText.includes("Worst")) {
-            userText = userText.slice(0, userText.indexOf("Worst")) + "*****" + userText.slice(userText.indexOf("Worst") + 5);
-        }
-        else if (userText.includes("Shit")) {
-            userText = userText.slice(0, userText.indexOf("Shit")) + "****" + userText.slice(userText.indexOf("Shit") + 4);
-        }
-        else if (userText.includes("damn")) {
-            userText = userText.slice(0, userText.indexOf("damn")) + "****" + userText.slice(userText.indexOf("damn") + 4);
-        }
-        else if (userText.includes("darn")) {
-            userText = userText.slice(0, userText.indexOf("darn")) + "****" + userText.slice(userText.indexOf("darn") + 4);
-        }
-        else if (userText.includes("bad")) {
-            userText = userText.slice(0, userText.indexOf("bad"))+ "***" + userText.slice(userText.indexOf("bad") + 3);
-        }
-        else if (userText.includes("worse")) {
-            userText = userText.slice(0, userText.indexOf("worse")) + "*****" + userText.slice(userText.indexOf("worse") + 5);
-        }
-        else if (userText.includes("worst")) {
-            userText = userText.slice(0, userText.indexOf("worst")) + "*****" + userText.slice(userText.indexOf("worst") + 5);
-        }
-        else if (userText.includes("shit")) {
-            userText = userText.slice(0, userText.indexOf("shit")) + "****" + userText.slice(userText.indexOf("shit") + 4);
+        else if (userText.match(/[Ss][Hh][Ii][Tt]/)) {
+            index = userText.match(/[Ss][Hh][Ii][Tt]/).index;
+            userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
         }
     }
 
@@ -89,6 +61,7 @@ function buttonSendText(sampleText) {
 function sendButton() {
     getResponse();
 }
+
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
