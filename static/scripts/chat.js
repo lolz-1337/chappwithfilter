@@ -29,18 +29,25 @@ function getResponse() {
         userText = "Enter some text!";
     }
     else {
+        let count = 0;
+
         if (userText.match(/[Dd][Aa][MmRr][Nn]/)) {
             while (userText.match(/[Dd][Aa][MmRr][Nn]/)) {
                 index = userText.match(/[Dd][Aa][MmRr][Nn]/).index;
                 userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+                count++;
             }
         }
         if (userText.match(/[Ss][Hh][Ii][Tt]/)) {
             while (userText.match(/[Ss][Hh][Ii][Tt]/)) {
                 index = userText.match(/[Ss][Hh][Ii][Tt]/).index;
                 userText = userText.slice(0, index) + "****" + userText.slice(index + 4);
+                count++;
             }
         }
+
+        let tf = count / userText.split(' ').length;
+        console.log("Trust factor = " + tf);
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
@@ -48,10 +55,6 @@ function getResponse() {
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
 }
 
 function buttonSendText(sampleText) {
